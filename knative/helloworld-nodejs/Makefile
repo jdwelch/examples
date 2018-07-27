@@ -1,5 +1,6 @@
 CONTAINER_NAME = knative-hellonode
 GCP_PROJECT = proj-genesis
+CLUSTER_NAME = `kubectl config current-context`
 
 all: clean build deploy
 
@@ -19,14 +20,15 @@ run-docker:
 	docker run -it -p 8080:8080 gcr.io/$(GCP_PROJECT)/$(CONTAINER_NAME):latest
 
 run:
+	@echo "🔘 Starting app..."
 	npm start
 
 deploy:
-	@echo "🔘 Deploying to cluster..."
+	@echo "🔘 Deploying to cluster $(CLUSTER_NAME)..."
 	kubectl apply -f service.yaml
 
 stop:
-	@echo "🔘 Removing from cluster..."
+	@echo "🔘 Removing from cluster $(CLUSTER_NAME)..."
 	kubectl delete -f service.yaml
 
 clean:
