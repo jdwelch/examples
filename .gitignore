@@ -99,3 +99,9 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Dep vendor dir
+vendor
+
+# Binaries
+build
