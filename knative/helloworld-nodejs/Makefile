@@ -1,5 +1,8 @@
+ifndef GCP_PROJECT
+$(error GCP_PROJECT is not set)
+endif
+
 CONTAINER_NAME = knative-hellonode
-GCP_PROJECT = proj-genesis
 CLUSTER_NAME = `kubectl config current-context`
 
 all: clean build deploy
