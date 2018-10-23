@@ -21,3 +21,7 @@ clean:
 
 deploy:
 # @echo "🔘 Deploying to..."
+
+demo:
+	@echo "Tryin it out!"
+	./build/upload -cloud aws -bucket gocloud-07283761 ~/Animate\ Me/katya_wink.gif
