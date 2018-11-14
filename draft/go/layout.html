@@ -1,0 +1,16 @@
+<body>
+<style>
+    body {
+        font-family:'Helvetica Neue', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: light;
+    }
+</style>
+    <h1>{{.PageTitle}}</h1>
+    {{range .Messages}}
+        <p style="font-family: 'Helvetica Neue'">
+            {{.Text}}
+            <br />
+            <small style="color:#275956"><br/><strong>created:</strong> {{.Created}}</small>
+        </p>
+    {{end}}
+</body>
